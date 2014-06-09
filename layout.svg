@@ -313,7 +313,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.5669609"
-     inkscape:cx="179.04036"
+     inkscape:cx="92.234172"
      inkscape:cy="100.46281"
      inkscape:document-units="in"
      inkscape:current-layer="layer4"
@@ -12320,5 +12320,28 @@
          id="tspan5240"
          x="-86.619186"
          y="164.56255">MAX4173H</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="159.75"
+       y="-2.25"
+       id="text5393"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan5395"
+         x="159.75"
+         y="-2.25">SB1100</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial;-inkscape-font-specification:Arial"
+       x="-164.25"
+       y="20.25"
+       id="text5393-2"
+       sodipodi:linespacing="100%"
+       transform="matrix(0,-1,1,0,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan5395-2"
+         x="-164.25"
+         y="20.25">SB1100</tspan></text>
   </g>
 </svg>
