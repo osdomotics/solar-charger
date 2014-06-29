@@ -333,7 +333,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.5669609"
-     inkscape:cx="92.234172"
+     inkscape:cx="225.39428"
      inkscape:cy="100.46281"
      inkscape:document-units="in"
      inkscape:current-layer="layer2"
@@ -9184,8 +9184,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Lead"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <g
        id="g11455">
       <path
@@ -10897,11 +10896,6 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:2.70000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 213.75,119.25 63,0"
-       id="path6192"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:2.70000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 276.75,29.25 9,0 0,9"
        id="path6194"
        inkscape:connector-curvature="0" />
@@ -11070,6 +11064,11 @@
        style="fill:none;stroke:#000000;stroke-width:2.70000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 105.75,20.25 0,18"
        id="path5615"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.7;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 213.75,119.25 54,0 0,-27 9,0"
+       id="path4324"
        inkscape:connector-curvature="0" />
   </g>
   <g
