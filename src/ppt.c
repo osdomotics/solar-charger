@@ -99,7 +99,7 @@
 #define SCALE_SOL_VOLT_DIV   1023L
 #define SCALE_BAT_VOLT_MUL  29748L
 #define SCALE_BAT_VOLT_DIV   1023L
-#define SCALE_SOL_AMPS_MUL   3200L
+#define SCALE_SOL_AMPS_MUL   2805L
 #define SCALE_SOL_AMPS_DIV   1023L
 
 /* Timer definitions */
