@@ -64,6 +64,8 @@ extern uint16_t sol_millivolt;
 extern uint16_t bat_millivolt;
 /* We expect up to around 25V and 5A, thats 125W so we need 32 bit */
 extern uint32_t sol_milliwatt;
+/* Last mW measurement before going to off mode */
+extern uint32_t sol_mW_last;
 
 /* Resources */
 //extern resource_t resource_info;
@@ -71,6 +73,7 @@ extern resource_t resource_solar_current;
 extern resource_t resource_solar_voltage;
 extern resource_t resource_battery_voltage;
 extern resource_t resource_solar_power;
+extern resource_t resource_solar_power_last;
 
 /*
  * VI settings, see coding style
