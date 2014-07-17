@@ -108,7 +108,7 @@
 #define TIMER_CHANNEL HWT_CHANNEL_A
 
 /* Period of the mainloop, wait-time between two invocations */
-#define LOOP_PERIOD (CLOCK_SECOND / 8)
+#define LOOP_PERIOD (CLOCK_SECOND / 16)
 
 /* PWM duty-cycle definitions in percent */
 #define PWM_MAX   100
@@ -123,14 +123,17 @@
 #define CHARGER_FLOAT 3
 
 /* Measurements that lead to charger state changes */
-#define SOL_MILLIWATT_MIN    1000
+#define SOL_MILLIWATT_RST     100
+#define SOL_MILLIWATT_MIN     200
 #define SOL_MILLIWATT_LOW    5000
 #define BAT_MILLIVOLT_MIN   11000
 #define BAT_MILLIVOLT_MAX   14500
 #define BAT_MILLIVOLT_HIGH  13000
 
 /* Number of iterations of charger in OFF state */
-#define OFF_WAIT 9
+#define OFF_WAIT (2 * CLOCK_SECOND / LOOP_PERIOD)
+/* Number of iterations of charger in ON state when coming from OFF */
+#define CHG_WAIT (1 * CLOCK_SECOND / LOOP_PERIOD / 2)
 
 #define mosfets_on()  digitalWrite (PIN_PWM_ENABLE, HIGH)
 #define mosfets_off() digitalWrite (PIN_PWM_ENABLE, LOW)
@@ -140,6 +143,7 @@ uint16_t sol_milliampere = 0;
 uint16_t sol_millivolt   = 0;
 uint16_t bat_millivolt   = 0;
 uint32_t sol_milliwatt   = 0;
+uint32_t sol_mW_last     = 0;
 
 /* Static variables (moduel global) */
 /*
@@ -149,7 +153,6 @@ uint32_t sol_milliwatt   = 0;
  * the maximum would set the pin to continuous high.
  */
 static uint16_t pwm_max   = 0;
-static uint16_t pwm_min   = 0;
 static uint16_t pwm_start = 0;
 static uint16_t pwm_inc   = 0;
 static uint16_t pwm_delta = 0;
@@ -205,14 +208,20 @@ static void read_analog_inputs (void)
  * We blink up to 4 times and then have a long pause.
  * Number of blinks depends on charger state.
  */
+#define LED_PERIOD (CLOCK_SECOND / LOOP_PERIOD * 2)
+#define LED_MAX    (LED_PERIOD > 16 ? LED_PERIOD : 16)
+#define LED_MASK   (LED_MAX - 1)
+#define LED_DIV    (LED_MAX / 16)
 static void led_state_machine (void)
 {
   static uint8_t counter = 0;
-  counter &= 15;
-  if (counter & 1) {
+  uint8_t shifted = 0; 
+  counter &= LED_MASK;
+  shifted  = counter / LED_DIV;
+  if (shifted & 1) {
     digitalWrite (PIN_LED, HIGH);
   }
-  else if ((counter / 2) <= charger_state) {
+  else if ((shifted / 2) <= charger_state) {
     digitalWrite (PIN_LED, LOW);
   }
   counter++;
@@ -243,6 +252,9 @@ static void set_pwm (void)
  *   Probably happening at dawn or dusk when solar power is too low for
  *   bulk charging state but not low enough for off state. We set pwm to
  *   pwm_max to get the available power to the battery.
+ *   When entering this state from CHARGER_OFF, we also wait CHG_WAIT
+ *   until power has settled (or until power drops below
+ *   SOL_MILLIWATT_RST).
  *
  * CHARGER_BULK: sol_milliwatt > SOL_MILLIWATT_LOW
  *   Bulk charging of battery running the Peak Power Tracking algorithm.
@@ -273,9 +285,13 @@ static void charger_state_machine (void)
 
   switch (charger_state) {
     case CHARGER_ON:
-      if (sol_milliwatt < SOL_MILLIWATT_MIN) {
+      if (sol_milliwatt > SOL_MILLIWATT_RST && off_wait) {
+        off_wait--;
+      }
+      else if (sol_milliwatt < SOL_MILLIWATT_MIN) {
         charger_state = CHARGER_OFF;
         off_wait = OFF_WAIT;
+        sol_mW_last = sol_milliwatt;
         mosfets_off ();
       }
       else if (bat_millivolt > BAT_MILLIVOLT_MAX) {
@@ -351,11 +367,13 @@ static void charger_state_machine (void)
         && sol_millivolt > bat_millivolt
         )
       {
-        pwm = pwm_start;
+        pwm = pwm_max;
         set_pwm ();
         charger_state = CHARGER_ON;
+        off_wait = CHG_WAIT;
         mosfets_on ();
       }
+      break;
     default:
       mosfets_off ();
       break;
@@ -373,13 +391,13 @@ PROCESS_THREAD (ppt, ev, data)
   rest_activate_resource (&resource_solar_voltage);
   rest_activate_resource (&resource_battery_voltage);
   rest_activate_resource (&resource_solar_power);
+  rest_activate_resource (&resource_solar_power_last);
   adc_init ();
   /* 20µs cycle time for timer, fast pwm mode, ICR */
   hwtimer_pwm_ini (TIMER, 20, HWT_PWM_FAST, 0);
   hwtimer_pwm_enable (TIMER, TIMER_CHANNEL);
   pwm_max = hwtimer_pwm_max_ticks (TIMER) - 1;
   /* Do long arithmetics here, the duty-cycle can be up to 0xFFFF */
-  pwm_min   = (pwm_max + 1L) * PWM_MIN   / 100L;
   pwm_start = (pwm_max + 1L) * PWM_START / 100L;
   pwm_inc   = (pwm_max + 1L) * 1L        / 100L;
   pwm_delta = pwm_inc;
