@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = Fri 18 Jul 2014 02:51:01 PM CEST
+Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = Fri 18 Jul 2014 05:21:14 PM CEST
 
 BeginCmp
 TimeStamp = /53C7EB76;
@@ -137,7 +137,7 @@ BeginCmp
 TimeStamp = /53C80639;
 Reference = IC1;
 ValeurCmp = MAX4173H;
-IdModule  = SSOP8;
+IdModule  = SO8E;
 EndCmp
 
 BeginCmp
@@ -151,14 +151,14 @@ BeginCmp
 TimeStamp = /53C81449;
 Reference = IC3;
 ValeurCmp = IR2104;
-IdModule  = SSOP8;
+IdModule  = DIP-8-SO8E;
 EndCmp
 
 BeginCmp
 TimeStamp = /53C80A5D;
 Reference = IC4;
 ValeurCmp = NR111E;
-IdModule  = SSOP8;
+IdModule  = SO8_WITH_EP;
 EndCmp
 
 BeginCmp

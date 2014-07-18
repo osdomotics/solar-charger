@@ -1,11 +1,6 @@
-update=Thu 17 Jul 2014 06:36:39 PM CEST
+update=Fri 18 Jul 2014 05:17:33 PM CEST
 version=1
-last_client=eeschema
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
+last_client=cvpcb
 [pcbnew]
 version=1
 PadDrlX=320
@@ -24,7 +19,6 @@ TxtLar=120
 MSegLar=150
 LastNetListRead=
 [pcbnew/libraries]
-LibDir=
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -36,6 +30,8 @@ LibName8=led
 LibName9=dip_sockets
 LibName10=pga_sockets
 LibName11=valves
+LibName12=DIP-soic
+LibDir=
 [general]
 version=1
 [eeschema]
@@ -102,3 +98,8 @@ LibName29=contrib
 LibName30=valves
 LibName31=irfiz44n
 LibName32=connectors
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
