@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 18 Jul 2014 03:47:43 PM CEST
+EESchema Schematic File Version 2  date Sat 19 Jul 2014 08:27:39 PM CEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,13 +31,14 @@ LIBS:contrib
 LIBS:valves
 LIBS:irfiz44n
 LIBS:connectors
+LIBS:solar-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title "Peak Power Solar Charger"
-Date "18 jul 2014"
+Date "19 jul 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -399,7 +400,7 @@ L DIODE D4
 U 1 1 53C814A6
 P 4250 4300
 F 0 "D4" H 4250 4400 40  0000 C CNN
-F 1 "1N4148" H 4250 4200 40  0000 C CNN
+F 1 "LL4148 (1N4148)" H 4250 4200 40  0000 C CNN
 	1    4250 4300
 	1    0    0    -1  
 $EndComp
@@ -462,7 +463,7 @@ L DIODE D3
 U 1 1 53C80E46
 P 800 7100
 F 0 "D3" H 800 7200 40  0000 C CNN
-F 1 "SB1100" H 800 7000 40  0000 C CNN
+F 1 "PMEG6020EP(SB1100)" H 800 7000 40  0000 C CNN
 	1    800  7100
 	0    -1   -1   0   
 $EndComp
@@ -714,7 +715,7 @@ L DIODE D2
 U 1 1 53C7EBC3
 P 4850 2450
 F 0 "D2" H 4850 2550 40  0000 C CNN
-F 1 "1N4148" H 4850 2350 40  0000 C CNN
+F 1 "LL4148 (1N4148)" H 4850 2350 40  0000 C CNN
 	1    4850 2450
 	-1   0    0    -1  
 $EndComp
@@ -741,7 +742,7 @@ L DIODE D1
 U 1 1 53C7EACC
 P 6300 3300
 F 0 "D1" H 6300 3400 40  0000 C CNN
-F 1 "SB1100" H 6300 3200 40  0000 C CNN
+F 1 "PMEG6020EP(SB1100)" H 6300 3200 40  0000 C CNN
 	1    6300 3300
 	0    -1   -1   0   
 $EndComp

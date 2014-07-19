@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = Fri 18 Jul 2014 05:21:14 PM CEST
+Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = Sat 19 Jul 2014 08:34:24 PM CEST
 
 BeginCmp
 TimeStamp = /53C7EB76;
@@ -108,29 +108,29 @@ EndCmp
 BeginCmp
 TimeStamp = /53C7EACC;
 Reference = D1;
-ValeurCmp = SB1100;
-IdModule  = ;
+ValeurCmp = PMEG6020EP(SB1100);
+IdModule  = SOD128;
 EndCmp
 
 BeginCmp
 TimeStamp = /53C7EBC3;
 Reference = D2;
-ValeurCmp = 1N4148;
-IdModule  = ;
+ValeurCmp = LL4148_(1N4148);
+IdModule  = Mini-MELF-SOD80;
 EndCmp
 
 BeginCmp
 TimeStamp = /53C80E46;
 Reference = D3;
-ValeurCmp = SB1100;
-IdModule  = ;
+ValeurCmp = PMEG6020EP(SB1100);
+IdModule  = SOD128;
 EndCmp
 
 BeginCmp
 TimeStamp = /53C814A6;
 Reference = D4;
-ValeurCmp = 1N4148;
-IdModule  = ;
+ValeurCmp = LL4148_(1N4148);
+IdModule  = Mini-MELF-SOD80;
 EndCmp
 
 BeginCmp
@@ -144,7 +144,7 @@ BeginCmp
 TimeStamp = /53C81D49;
 Reference = IC2;
 ValeurCmp = MERKURBOARD;
-IdModule  = ;
+IdModule  = Merkurboard;
 EndCmp
 
 BeginCmp
@@ -165,14 +165,14 @@ BeginCmp
 TimeStamp = /53C7FBAD;
 Reference = J1;
 ValeurCmp = SOLAR_INPUT;
-IdModule  = ;
+IdModule  = Cinch;
 EndCmp
 
 BeginCmp
 TimeStamp = /53C7FD8D;
 Reference = J2;
 ValeurCmp = BATTERY_OUTPUT;
-IdModule  = ;
+IdModule  = PWR-Conn;
 EndCmp
 
 BeginCmp
@@ -186,7 +186,7 @@ BeginCmp
 TimeStamp = /53C7F076;
 Reference = L2;
 ValeurCmp = 33µH;
-IdModule  = R5;
+IdModule  = L-Choke;
 EndCmp
 
 BeginCmp

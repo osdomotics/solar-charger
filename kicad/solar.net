@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Fri 18 Jul 2014 05:21:14 PM CEST
+# EESchema Netlist Version 1.1 created  Sat 19 Jul 2014 08:34:24 PM CEST
 (
  ( /53C7EB76 SM0603_Capa C1 0.1µF
   ( 1 N-000041 )
@@ -60,19 +60,19 @@
   ( 1 N-000038 )
   ( 2 GND )
  )
- ( /53C7EACC $noname$ D1 SB1100
+ ( /53C7EACC SOD128 D1 PMEG6020EP(SB1100)
   ( 1 GND )
   ( 2 N-000041 )
  )
- ( /53C7EBC3 $noname$ D2 1N4148
+ ( /53C7EBC3 Mini-MELF-SOD80 D2 LL4148_(1N4148)
   ( 1 N-000043 )
   ( 2 N-000033 )
  )
- ( /53C80E46 $noname$ D3 SB1100
+ ( /53C80E46 SOD128 D3 PMEG6020EP(SB1100)
   ( 1 GND )
   ( 2 N-000042 )
  )
- ( /53C814A6 $noname$ D4 1N4148
+ ( /53C814A6 Mini-MELF-SOD80 D4 LL4148_(1N4148)
   ( 1 N-000004 )
   ( 2 N-000010 )
  )
@@ -86,7 +86,7 @@
   ( 7 ? )
   ( 8 N-000044 )
  )
- ( /53C81D49 $noname$ IC2 MERKURBOARD
+ ( /53C81D49 Merkurboard IC2 MERKURBOARD
   ( 1 ? )
   ( 2 ? )
   ( 3 PWM )
@@ -133,11 +133,11 @@
   ( 7 N-000039 )
   ( 8 N-000038 )
  )
- ( /53C7FBAD $noname$ J1 SOLAR_INPUT
+ ( /53C7FBAD Cinch J1 SOLAR_INPUT
   ( 1 N-000044 )
   ( 2 GND )
  )
- ( /53C7FD8D $noname$ J2 BATTERY_OUTPUT
+ ( /53C7FD8D PWR-Conn J2 BATTERY_OUTPUT
   ( 1 N-000008 )
   ( 2 GND )
  )
@@ -145,7 +145,7 @@
   ( 1 N-000042 )
   ( 2 +3.3V )
  )
- ( /53C7F076 R5 L2 33µH
+ ( /53C7F076 L-Choke L2 33µH
   ( 1 N-000041 )
   ( 2 N-000008 )
  )
