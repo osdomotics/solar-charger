@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 21 Jul 2014 12:41:27 PM CEST
+EESchema Schematic File Version 2  date Mon 21 Jul 2014 06:24:24 PM CEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -280,25 +280,25 @@ Wire Wire Line
 	1150 3050 1150 2100
 Wire Wire Line
 	800  5750 1500 5750
-Text GLabel 3750 5100 0    30   Input ~ 0
+Text GLabel 3750 5100 0    80   Input ~ 0
 ~SD
-Text GLabel 3750 4900 0    30   Input ~ 0
+Text GLabel 3750 4900 0    80   Input ~ 0
 PWM
-Text GLabel 1250 4150 0    30   Input ~ 0
+Text GLabel 1250 4150 0    60   Input ~ 0
 I_Sol
-Text GLabel 9000 2800 2    30   Input ~ 0
+Text GLabel 9000 2800 2    80   Input ~ 0
 U_Bat
-Text GLabel 8550 4750 0    20   Input ~ 0
+Text GLabel 8550 4750 1    80   Input ~ 0
 PWM
-Text GLabel 8350 4750 0    20   Input ~ 0
+Text GLabel 8350 4750 1    80   Input ~ 0
 ~SD
-Text GLabel 7550 4750 0    20   Input ~ 0
+Text GLabel 7550 4750 1    80   Input ~ 0
 U_Bat
-Text GLabel 7350 4750 0    20   Input ~ 0
+Text GLabel 7350 4750 1    80   Input ~ 0
 I_Sol
-Text GLabel 1700 2550 2    30   Input ~ 0
+Text GLabel 1700 2550 2    80   Input ~ 0
 U_Sol
-Text GLabel 7150 4750 0    20   Input ~ 0
+Text GLabel 7150 4750 1    80   Input ~ 0
 U_Sol
 NoConn ~ 2600 5750
 NoConn ~ 8150 4750
