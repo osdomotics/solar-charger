@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = Sat 19 Jul 2014 08:34:24 PM CEST
+Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = Mon 21 Jul 2014 12:41:17 PM CEST
 
 BeginCmp
 TimeStamp = /53C7EB76;
@@ -172,7 +172,7 @@ BeginCmp
 TimeStamp = /53C7FD8D;
 Reference = J2;
 ValeurCmp = BATTERY_OUTPUT;
-IdModule  = PWR-Conn;
+IdModule  = Cinch;
 EndCmp
 
 BeginCmp

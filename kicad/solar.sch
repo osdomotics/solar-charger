@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 19 Jul 2014 08:27:39 PM CEST
+EESchema Schematic File Version 2  date Mon 21 Jul 2014 12:41:27 PM CEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -38,7 +38,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title "Peak Power Solar Charger"
-Date "19 jul 2014"
+Date "21 jul 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -46,6 +46,14 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text GLabel 8700 2100 1    60   Input ~ 0
+Bat+
+Text GLabel 1800 1950 1    60   Input ~ 0
+Sol+
+Text GLabel 3900 1950 1    60   Input ~ 0
+FET-in
+Text GLabel 6150 2800 1    60   Input ~ 0
+FET-out
 Wire Wire Line
 	800  7500 3500 7500
 Connection ~ 3750 5100
@@ -299,19 +307,19 @@ NoConn ~ 7950 4750
 NoConn ~ 8750 4750
 NoConn ~ 8950 4750
 $Comp
-L GND #PWR5
+L GND #PWR01
 U 1 1 53C81DB7
 P 6350 4550
-F 0 "#PWR5" H 6350 4550 30  0001 C CNN
+F 0 "#PWR01" H 6350 4550 30  0001 C CNN
 F 1 "GND" H 6350 4480 30  0001 C CNN
 	1    6350 4550
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3,3V #PWR4
+L +3,3V #PWR02
 U 1 1 53C81D9E
 P 6750 4450
-F 0 "#PWR4" H 6750 4410 30  0001 C CNN
+F 0 "#PWR02" H 6750 4410 30  0001 C CNN
 F 1 "+3,3V" H 6750 4560 30  0000 C CNN
 	1    6750 4450
 	1    0    0    -1  
@@ -378,10 +386,10 @@ F 1 "0.1µF" H 5000 4800 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR8
+L GND #PWR03
 U 1 1 53C814F0
 P 3500 5550
-F 0 "#PWR8" H 3500 5550 30  0001 C CNN
+F 0 "#PWR03" H 3500 5550 30  0001 C CNN
 F 1 "GND" H 3500 5480 30  0001 C CNN
 	1    3500 5550
 	1    0    0    -1  
@@ -432,10 +440,10 @@ F 1 "22µF" H 3200 7050 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3,3V #PWR9
+L +3,3V #PWR04
 U 1 1 53C81092
 P 3700 6150
-F 0 "#PWR9" H 3700 6110 30  0001 C CNN
+F 0 "#PWR04" H 3700 6110 30  0001 C CNN
 F 1 "+3,3V" H 3700 6260 30  0000 C CNN
 	1    3700 6150
 	1    0    0    -1  
@@ -477,10 +485,10 @@ F 1 "10µH" V 2000 6300 40  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR10
+L GND #PWR05
 U 1 1 53C80C76
 P 1500 7700
-F 0 "#PWR10" H 1500 7700 30  0001 C CNN
+F 0 "#PWR05" H 1500 7700 30  0001 C CNN
 F 1 "GND" H 1500 7630 30  0001 C CNN
 	1    1500 7700
 	1    0    0    -1  
@@ -504,10 +512,10 @@ F 1 "1M" V 2900 5300 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR7
+L GND #PWR06
 U 1 1 53C80BCF
 P 650 5300
-F 0 "#PWR7" H 650 5300 30  0001 C CNN
+F 0 "#PWR06" H 650 5300 30  0001 C CNN
 F 1 "GND" H 650 5230 30  0001 C CNN
 	1    650  5300
 	1    0    0    -1  
@@ -567,10 +575,10 @@ F 1 "0.1µF" H 1750 2700 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR1
+L GND #PWR07
 U 1 1 53C8084D
 P 1400 3250
-F 0 "#PWR1" H 1400 3250 30  0001 C CNN
+F 0 "#PWR07" H 1400 3250 30  0001 C CNN
 F 1 "GND" H 1400 3180 30  0001 C CNN
 	1    1400 3250
 	1    0    0    -1  
@@ -594,19 +602,19 @@ F 1 "10k" V 1400 2250 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR6
+L GND #PWR08
 U 1 1 53C80761
 P 1250 4700
-F 0 "#PWR6" H 1250 4700 30  0001 C CNN
+F 0 "#PWR08" H 1250 4700 30  0001 C CNN
 F 1 "GND" H 1250 4630 30  0001 C CNN
 	1    1250 4700
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3,3V #PWR2
+L +3,3V #PWR09
 U 1 1 53C80703
 P 900 3450
-F 0 "#PWR2" H 900 3410 30  0001 C CNN
+F 0 "#PWR09" H 900 3410 30  0001 C CNN
 F 1 "+3,3V" H 900 3560 30  0000 C CNN
 	1    900  3450
 	1    0    0    -1  
@@ -684,10 +692,10 @@ F 1 "0.005" V 2650 1950 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR3
+L GND #PWR010
 U 1 1 53C7F14E
 P 5850 3700
-F 0 "#PWR3" H 5850 3700 30  0001 C CNN
+F 0 "#PWR010" H 5850 3700 30  0001 C CNN
 F 1 "GND" H 5850 3630 30  0001 C CNN
 	1    5850 3700
 	1    0    0    -1  

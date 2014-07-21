@@ -1,8 +1,13 @@
-update=Sat 19 Jul 2014 08:28:00 PM CEST
+update=Mon 21 Jul 2014 09:29:13 AM CEST
 version=1
-last_client=cvpcb
+last_client=pcbnew
 [general]
 version=1
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [eeschema]
 version=1
 LibDir=
@@ -85,6 +90,7 @@ TxtLar=120
 MSegLar=150
 LastNetListRead=
 [pcbnew/libraries]
+LibDir=../kicad
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -96,14 +102,8 @@ LibName8=led
 LibName9=dip_sockets
 LibName10=pga_sockets
 LibName11=valves
-LibName12=DIP-soic
-LibName13=Merkurboard
-LibName14=Connectors
-LibName15=L-Choke
-LibName16=Diodes-RSC
-LibDir=../kicad
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
+LibName12=Merkurboard
+LibName13=Connectors
+LibName14=L-Choke
+LibName15=Diodes-RSC
+LibName16=DIP-soic
