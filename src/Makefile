@@ -1,4 +1,5 @@
-all: ppt ppt.osd-merkur.hex ppt.osd-merkur.eep
+EXE=ppt
+all: $(EXE)
 # use this target explicitly if requried: er-plugtest-server
 
 # for some platforms
@@ -28,32 +29,16 @@ endif
 # linker optimizations
 SMALL=1
 
-# REST framework, only use CoAP-13
-${info INFO: compiling with CoAP-13}
-CFLAGS += -DWITH_COAP=13
-CFLAGS += -DREST=coap_rest_implementation
-CFLAGS += -DUIP_CONF_TCP=0
-APPS += er-coap-13
-
-APPS += erbium json json-resource
+# REST framework
+APPS += er-coap rest-engine
+APPS += json json-resource
 
 include $(CONTIKI)/Makefile.include
 
-ppt.osd-merkur.hex: ppt.osd-merkur
-	avr-objcopy -j .text -j .data -O ihex ppt.osd-merkur \
-	    ppt.osd-merkur.hex
+avr-size: $(EXE).$(TARGET).sz
+flash: $(EXE).$(TARGET).u $(EXE).$(TARGET).eu
 
-ppt.osd-merkur.eep: ppt.osd-merkur
-	avr-objcopy -j .eeprom --set-section-flags=.eeprom="alloc,load" \
-	    --change-section-lma .eeprom=0 -O ihex                      \
-	    ppt.osd-merkur ppt.osd-merkur.eep
-
-flash: ppt.osd-merkur.hex ppt.osd-merkur.eep
-	avrdude -pm128rfa1 -c arduino -P/dev/ttyUSB0 -b57600 -e -U \
-	    flash:w:ppt.osd-merkur.hex:a -U \
-	    eeprom:w:ppt.osd-merkur.eep:a
-
-.PHONY: flash
+.PHONY: flash avr-size
 
 $(CONTIKI)/tools/tunslip6:      $(CONTIKI)/tools/tunslip6.c
 	(cd $(CONTIKI)/tools && $(MAKE) tunslip6)

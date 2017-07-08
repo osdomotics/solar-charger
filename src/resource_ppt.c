@@ -47,81 +47,81 @@
 #include <stdlib.h>
 #include <string.h>
 #include "contiki.h"
-#include "er-coap-13.h"
+#include "er-coap.h"
 #include "generic_resource.h"
 #include "ppt.h"
 
-size_t sol_ampere (const char *n, uint8_t is_json, char *buf, size_t bs)
+size_t sol_ampere (const char *n, const char *uri, char *buf, size_t bs)
 {
     return snprintf
         (buf, bs, "%d.%03d", sol_milliampere / 1000, sol_milliampere % 1000);
 }
 
 GENERIC_RESOURCE \
-    ( solar_current, METHOD_GET
-    , "charger/solar_current"
+    ( solar_current
     , Solar Current
     , A
+    , 0
     , NULL
     , sol_ampere
     );
 
-size_t sol_watt (const char *n, uint8_t is_json, char *buf, size_t bs)
+size_t sol_watt (const char *n, const char *uri, char *buf, size_t bs)
 {
     return snprintf
         (buf, bs, "%ld.%03ld", sol_milliwatt / 1000, sol_milliwatt % 1000);
 }
 
 GENERIC_RESOURCE \
-    ( solar_power, METHOD_GET
-    , "charger/solar_power"
+    ( solar_power
     , Solar Power
     , W
+    , 0
     , NULL
     , sol_watt
     );
 
-size_t sol_watt_last (const char *n, uint8_t is_json, char *buf, size_t bs)
+size_t sol_watt_last (const char *n, const char *uri, char *buf, size_t bs)
 {
     return snprintf
         (buf, bs, "%ld.%03ld", sol_mW_last / 1000, sol_mW_last % 1000);
 }
 
 GENERIC_RESOURCE \
-    ( solar_power_last, METHOD_GET
-    , "charger/solar_power_last"
+    ( solar_power_last
     , Last Solar Power
     , W
+    , 0
     , NULL
     , sol_watt_last
     );
 
-size_t sol_volt (const char *n, uint8_t is_json, char *buf, size_t bs)
+size_t sol_volt (const char *n, const char *uri, char *buf, size_t bs)
 {
     return snprintf
         (buf, bs, "%d.%03d", sol_millivolt / 1000, sol_millivolt % 1000);
 }
 
 GENERIC_RESOURCE \
-    ( solar_voltage, METHOD_GET
-    , "charger/solar_voltage"
+    ( solar_voltage
     , Solar Voltage
     , V
+    , 0
     , NULL
     , sol_volt
     );
 
-size_t bat_volt (const char *n, uint8_t is_json, char *buf, size_t bs)
+size_t bat_volt (const char *n, const char *uri, char *buf, size_t bs)
 {
     return snprintf
         (buf, bs, "%d.%03d", bat_millivolt / 1000, bat_millivolt % 1000);
 }
 
 GENERIC_RESOURCE \
-    ( battery_voltage, METHOD_GET
-    , "charger/battery_voltage"
+    ( battery_voltage
     , Battery Voltage
     , V
+    , 0
     , NULL
     , bat_volt
     );

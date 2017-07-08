@@ -60,8 +60,7 @@
 #include <string.h>
 #include "contiki.h"
 #include "contiki-net.h"
-#include "erbium.h"
-#include "er-coap-13.h"
+#include "er-coap.h"
 #include "Arduino.h"
 #include "ppt.h"
 
@@ -386,12 +385,12 @@ PROCESS_THREAD (ppt, ev, data)
   PROCESS_BEGIN ();
 
   rest_init_engine ();
-  //rest_activate_resource (&resource_info);
-  rest_activate_resource (&resource_solar_current);
-  rest_activate_resource (&resource_solar_voltage);
-  rest_activate_resource (&resource_battery_voltage);
-  rest_activate_resource (&resource_solar_power);
-  rest_activate_resource (&resource_solar_power_last);
+  //rest_activate_resource (&res_info);
+  rest_activate_resource (&res_solar_current, "solar_current");
+  rest_activate_resource (&res_solar_voltage, "solar_voltage");
+  rest_activate_resource (&res_battery_voltage, "bat_voltage");
+  rest_activate_resource (&res_solar_power, "solar_power");
+  rest_activate_resource (&res_solar_power_last, "solar_power_last");
   adc_init ();
   /* 20µs cycle time for timer, fast pwm mode, ICR */
   hwtimer_pwm_ini (TIMER, 20, HWT_PWM_FAST, 0);

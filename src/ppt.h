@@ -68,12 +68,12 @@ extern uint32_t sol_milliwatt;
 extern uint32_t sol_mW_last;
 
 /* Resources */
-//extern resource_t resource_info;
-extern resource_t resource_solar_current;
-extern resource_t resource_solar_voltage;
-extern resource_t resource_battery_voltage;
-extern resource_t resource_solar_power;
-extern resource_t resource_solar_power_last;
+//extern resource_t res_info;
+extern resource_t res_solar_current;
+extern resource_t res_solar_voltage;
+extern resource_t res_battery_voltage;
+extern resource_t res_solar_power;
+extern resource_t res_solar_power_last;
 
 /*
  * VI settings, see coding style
